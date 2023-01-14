@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        PersonelManagement staff = new PersonelManagement();
+        EmployeeBook staff = new EmployeeBook();
         staff.addEmployee("Филимонова Ольга Павловна", 1, 58500);
         staff.addEmployee("Вильгельмс Валерий Борисович", 2, 52000);
         staff.addEmployee("Фаткулин Ринат Исламович", 4, 57300);
@@ -12,7 +12,19 @@ public class Main {
         staff.addEmployee("Яркова Екатерина Дмитриевна", 1, 59100);
         staff.addEmployee("Шомысова Наталья Ивановна", 5, 56200);
 
+
+//        staff.printAllEmployees();
+//        System.out.println();
+//
+//        System.out.println();
         staff.printAllEmployees();
+//        staff.printAllEmployees();
+
+        staff.printAllEmployees();
+
+
+
+        /*staff.printAllEmployees();
 
         staff.printTotalPay();
 
@@ -40,10 +52,18 @@ public class Main {
 
         staff.printSalaryLessThen();
 
-        staff.printSalaryMoreThen();
+        staff.printSalaryMoreThen();*/
+
+//        staff.deleteEmployeeByName("Фаткулин Ринат Исламович");
+//
+//        staff.addEmployee("Сидоров Петр Иванович", 2, 36000);
+
+//        staff.deleteEmployeeById(2);
+
+//        staff.changeSalary("Шомысова Наталья Ивановна");
+
 
     }
-
 
 
 }

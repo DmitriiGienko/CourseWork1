@@ -1,18 +1,22 @@
 import java.util.Scanner;
 
-public class PersonelManagement {
+public class EmployeeBook {
     private final Employee[] employee;
     private int numberOfEmployees;
 
-    public PersonelManagement() {
+    public EmployeeBook() {
         this.employee = new Employee[10];
     }
 
+    //метод добавления сотрудников
     public void addEmployee(String fullName, int dep, double salary) {
+        if (numberOfEmployees >= employee.length) {
+            throw new IllegalArgumentException("Штат полный, невозможно нанять нового сотрудника");
+        }
         Employee newEmployee = new Employee(fullName, dep, salary);
-        employee[numberOfEmployees] = newEmployee;
-        numberOfEmployees++;
+        employee[numberOfEmployees++] = newEmployee;
     }
+
 
     // метод вывода всех сотрудников на экран
     public void printAllEmployees() {
@@ -186,7 +190,7 @@ public class PersonelManagement {
     public void printSalaryLessThen() {
         System.out.println("Введите сумму зарплаты");
         double pay = scanner.nextDouble();
-        System.out.printf("Меньше %.2f руб. получают:\n",pay);
+        System.out.printf("Меньше %.2f руб. получают:\n", pay);
         for (int i = 0; i < employee.length; i++) {
             if (employee[i].getSalary() < pay) {
                 System.out.println(employee[i].toStringDep());
@@ -198,11 +202,56 @@ public class PersonelManagement {
     public void printSalaryMoreThen() {
         System.out.println("Введите сумму зарплаты");
         double pay = scanner.nextDouble();
-        System.out.printf("Больше %.2f руб. получают:\n",pay);
+        System.out.printf("Больше %.2f руб. получают:\n", pay);
         for (int i = 0; i < employee.length; i++) {
             if (employee[i].getSalary() >= pay) {
                 System.out.println(employee[i].toStringDep());
             }
         }
     }
+
+    //    метод удаления сотрудника по имени
+    public void deleteEmployeeByName(String fullName) {
+        for (int i = 0; i < numberOfEmployees; i++) {
+            if (fullName.equals(employee[i].getFullName())) {
+                System.out.printf("Сотрудник %s уволен\n", employee[i].getFullName());
+                employee[i] = null;
+                if (i != (employee.length - 1)) {
+                    System.arraycopy(employee, i + 1, employee, i, numberOfEmployees - i - 1);
+                }
+                numberOfEmployees--;
+                return;
+            }
+        }
+    }
+
+    //    метод удаления сотрудника по id
+    public void deleteEmployeeById(int id) {
+        for (int i = 0; i < numberOfEmployees; i++) {
+            if (id == employee[i].getId()) {
+                System.out.printf("Сотрудник c Id %d уволен\n", employee[i].getId());
+                employee[i] = null;
+                if (i != (employee.length - 1)) {
+                    System.arraycopy(employee, i + 1, employee, i, numberOfEmployees - i - 1);
+                }
+                numberOfEmployees--;
+                return;
+            }
+        }
+    }
+
+    //метод изменения зарплаты сотрудника сотрудника
+    public void changeSalary(String fullName) {
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getFullName().equals(fullName)) {
+                System.out.println("На сколько % увеличить зарплату?");
+                double inc = scanner.nextDouble();
+                employee[i].setSalary(employee[i].getSalary() + (employee[i].getSalary() * inc / 100));
+                System.out.printf("%s тепеть получает %.2f руб\n", employee[i].getFullName(), employee[i].getSalary());
+            }
+        }
+
+    }
+
+
 }
