@@ -56,6 +56,8 @@ public class PersonelManagement {
         System.out.printf("\nCотрудник с максимальной зарплатой в %.2f руб.:\t%s\n", maxSalary, employeeMaxSal);
     }
 
+    Scanner scanner = new Scanner(System.in);
+
     //расчет средней зарплаты
     public void printAverageSalary() {
         double TotalSalary = 0;
@@ -90,7 +92,6 @@ public class PersonelManagement {
     //получить номер отдела
     public int getDepartmentNumber() {
         System.out.println("Выберите отдел с 1 по 5");
-        Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
         if (number > 0 && number <= 5) {
             return number;
@@ -176,6 +177,30 @@ public class PersonelManagement {
         int dep = getDepartmentNumber();
         for (int i = 0; i < employee.length; i++) {
             if (employee[i].getDep() == dep) {
+                System.out.println(employee[i].toStringDep());
+            }
+        }
+    }
+
+    //Вывод сотрудников с зарплатой меньше заданного числа
+    public void printSalaryLessThen() {
+        System.out.println("Введите сумму зарплаты");
+        double pay = scanner.nextDouble();
+        System.out.printf("Меньше %.2f руб. получают:\n",pay);
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getSalary() < pay) {
+                System.out.println(employee[i].toStringDep());
+            }
+        }
+    }
+
+    //Вывод сотрудников с зарплатой больше заданного числа
+    public void printSalaryMoreThen() {
+        System.out.println("Введите сумму зарплаты");
+        double pay = scanner.nextDouble();
+        System.out.printf("Больше %.2f руб. получают:\n",pay);
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getSalary() >= pay) {
                 System.out.println(employee[i].toStringDep());
             }
         }

@@ -12,31 +12,35 @@ public class Main {
         staff.addEmployee("Яркова Екатерина Дмитриевна", 1, 59100);
         staff.addEmployee("Шомысова Наталья Ивановна", 5, 56200);
 
-//        staff.printAllEmployees();
-//
-//        staff.printTotalPay();
-//
-//        staff.printEmpMinSal();
-//
-//        staff.printEmpMaxSal();
-//
-//        staff.printAverageSalary();
-//
-//        staff.printFullNames();
-//
-//        staff.increaseSalary();
-//
-//        staff.findMinSalaryDepEmployee();
-//
-//        staff.findMaxSalaryDepEmployee();
-//
-//        staff.printDepTotalSalary();
+        staff.printAllEmployees();
 
-//        staff.printAverageDepSalary();
+        staff.printTotalPay();
 
-//        staff.increaseDepSalary();
+        staff.printEmpMinSal();
+
+        staff.printEmpMaxSal();
+
+        staff.printAverageSalary();
+
+        staff.printFullNames();
+
+        staff.increaseSalary();
+
+        staff.findMinSalaryDepEmployee();
+
+        staff.findMaxSalaryDepEmployee();
+
+        staff.printDepTotalSalary();
+
+        staff.printAverageDepSalary();
+
+        staff.increaseDepSalary();
 
         staff.printDepEmployee();
+
+        staff.printSalaryLessThen();
+
+        staff.printSalaryMoreThen();
 
     }
 
