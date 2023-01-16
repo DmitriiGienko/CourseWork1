@@ -51,4 +51,12 @@ public class Employee {
                 "\tId: " + getId() + "\n" + "=========================================";
     }
 
+    public String toStringDep() {
+        return "Сотрудник: " + fullName + "\n" +
+                "\tзарплата:  " + salary + "\n" +
+                "\tId: " + getId() + "\n" + "=========================================";
+    }
+
+
+
 }

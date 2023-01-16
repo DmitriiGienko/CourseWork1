@@ -141,5 +141,43 @@ public class PersonelManagement {
         System.out.println("В отделе №" + dep + " сумма затрат на зарпату составляет " + depTotal + " руб.");
     }
 
+    // вывод средней зарплаты в отделе
+    public void printAverageDepSalary() {
+        int dep = getDepartmentNumber();
+        double sum = 0;
+        int count = 0;
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getDep() == dep) {
+                sum += employee[i].getSalary();
+                count++;
+            }
+        }
+        System.out.println("Средняя зарплата в отделе №" + dep + " равна " + sum / count + " руб.");
+    }
 
+    // увеличиваем зарплату отдела
+    public void increaseDepSalary() {
+        int dep = getDepartmentNumber();
+        System.out.println("На сколько повышаем зарплату?");
+        Scanner sc = new Scanner(System.in);
+        int inc = sc.nextInt();
+        double newSaalary = 0;
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getDep() == dep) {
+                newSaalary = employee[i].getSalary() + (employee[i].getSalary() * (inc / 100));
+                System.out.println("После повышения на " + inc + "% зарплата сотрудника "
+                        + employee[i].getFullName() + " составляет " + newSaalary);
+            }
+        }
+    }
+
+    // выводим на печать сотрудников отдела
+    public void printDepEmployee() {
+        int dep = getDepartmentNumber();
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getDep() == dep) {
+                System.out.println(employee[i].toStringDep());
+            }
+        }
+    }
 }
