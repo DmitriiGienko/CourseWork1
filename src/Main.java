@@ -9,10 +9,10 @@ public class Main {
         staff.addEmployee("Торопина Ольга Владимировна", 2, 55200);
         staff.addEmployee("Гастренко Александра Ивановна", 4, 54200);
         staff.addEmployee("Горбунова Алена Дмитриевна", 5, 59200);
-        staff.addEmployee("Яркова Екатерина Дмитриевна", 2, 59100);
+        staff.addEmployee("Яркова Екатерина Дмитриевна", 1, 59100);
         staff.addEmployee("Шомысова Наталья Ивановна", 5, 56200);
 
-        staff.printAllEmployees();
+/*        staff.printAllEmployees();
 
         staff.printTotalPay();
 
@@ -23,6 +23,14 @@ public class Main {
         staff.printAverageSalary();
 
         staff.printFullNames();
+
+        staff.increaseSalary();*/
+
+//        staff.findMinSalaryDepEmployee();
+
+//        staff.findMaxSalaryDepEmployee();
+
+        staff.printDepTotalSalary();
 
     }
 

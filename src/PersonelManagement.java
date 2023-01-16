@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class PersonelManagement {
     private final Employee[] employee;
     private int numberOfEmployees;
@@ -69,6 +71,74 @@ public class PersonelManagement {
         for (int i = 0; i < employee.length; i++) {
             System.out.println(employee[i].getFullName());
         }
+    }
+
+    //увеличиваем зарплату
+    public void increaseSalary() {
+        System.out.println("На сколько процентов повысим зарплату?");
+        Scanner sc = new Scanner(System.in);
+        double inc = sc.nextInt();
+        double newSalary = 0.0;
+        for (int i = 0; i < employee.length; i++) {
+            newSalary = employee[i].getSalary() + (employee[i].getSalary() * (inc / 100));
+            System.out.println("Зарплата сотрудника " + employee[i].getFullName()
+                    + " повышена с " + employee[i].getSalary() + " до "
+                    + newSalary + " руб.");
+        }
+    }
+
+    //получить номер отдела
+    public int getDepartmentNumber() {
+        System.out.println("Выберите отдел с 1 по 5");
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
+        if (number > 0 && number <= 5) {
+            return number;
+        } else {
+            throw new IllegalArgumentException("Не верно выбран отдел");
+        }
+    }
+
+    // вывод минимальной зарплаты в отделе
+    public void findMinSalaryDepEmployee() {
+        int dep = getDepartmentNumber();
+        double minSalary = 10000000;
+        String empl = null;
+        for (int i = 0; i < employee.length; i++) {
+            if ((employee[i].getDep() == dep) && employee[i].getSalary() < minSalary) {
+                minSalary = employee[i].getSalary();
+                empl = employee[i].getFullName();
+            }
+        }
+        System.out.println("В отделе №" + dep + " минимальна зарплата у " + empl
+                + " и составляет " + minSalary + " руб.");
+    }
+
+    // вывод максимальной зарплаты в отделе
+    public void findMaxSalaryDepEmployee() {
+        int dep = getDepartmentNumber();
+        double maxSalary = 0;
+        String empl = null;
+        for (int i = 0; i < employee.length; i++) {
+            if ((employee[i].getDep() == dep) && employee[i].getSalary() > maxSalary) {
+                maxSalary = employee[i].getSalary();
+                empl = employee[i].getFullName();
+            }
+        }
+        System.out.println("В отделе №" + dep + " максимальная зарплата у " + empl
+                + " и составляет " + maxSalary + " руб.");
+    }
+
+    // вывод расхода на зарплаты в отделе
+    public void printDepTotalSalary() {
+        int dep = getDepartmentNumber();
+        double depTotal = 0;
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getDep() == dep) {
+                depTotal += employee[i].getSalary();
+            }
+        }
+        System.out.println("В отделе №" + dep + " сумма затрат на зарпату составляет " + depTotal + " руб.");
     }
 
 
