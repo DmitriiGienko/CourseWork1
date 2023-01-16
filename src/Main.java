@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Employee[] employees = new Employee[10];
+/*        Employee[] employees = new Employee[10];
         employees[0] = new Employee("Филимонова Ольга Павловна", 1, 58500);
         employees[1] = new Employee("Вильгельмс Валерий Борисович", 2, 52000);
         employees[2] = new Employee("Фаткулин Ринат Исламович", 4, 57300);
@@ -10,7 +10,7 @@ public class Main {
         employees[6] = new Employee("Гастренко Александра Ивановна", 4, 54200);
         employees[7] = new Employee("Горбунова Алена Дмитриевна", 5, 59200);
         employees[8] = new Employee("Яркова Екатерина Дмитриевна", 2, 59100);
-        employees[9] = new Employee("Шомысова Наталья Ивановна", 5, 56200);
+        employees[9] = new Employee("Шомысова Наталья Ивановна", 5, 56200);*/
 
 // Печать всех сотрудников
 
@@ -21,7 +21,7 @@ public class Main {
 //        }
 
 // сумма зарплаты
-        double sum = 0;
+        /*double sum = 0;
         for (int i = 0; i < employees.length; i++) {
             sum += employees[i].getSalary();
         }
@@ -62,7 +62,7 @@ public class Main {
         for (Employee strings : new Employee) {
             System.out.println(strings.toString());
         }
-
+*/
     }
 
 

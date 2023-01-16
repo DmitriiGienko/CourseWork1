@@ -43,12 +43,12 @@ public class Employee {
         this.dep = dep;
     }
 
-    @Override
+   /* @Override
     public String toString() {
         return "Сотрудник: " + fullName + "\n" +
                 "..........отдел: " + dep + "\n" +
                 "..........зарплата: " + salary + "\n" +
                 "..........Id: " + getId()+ "\n" + "=========================================";
-    }
+    }*/
 
 }
