@@ -1,19 +1,18 @@
 public class Main {
     public static void main(String[] args) {
-/*        Employee[] employees = new Employee[10];
-        employees[0] = new Employee("Филимонова Ольга Павловна", 1, 58500);
-        employees[1] = new Employee("Вильгельмс Валерий Борисович", 2, 52000);
-        employees[2] = new Employee("Фаткулин Ринат Исламович", 4, 57300);
-        employees[3] = new Employee("Акимочкина Яна Юрьевна", 3, 53100);
-        employees[4] = new Employee("Петросян Дмитрий Владимироваич", 3, 52500);
-        employees[5] = new Employee("Торопина Ольга Владимировна", 2, 55200);
-        employees[6] = new Employee("Гастренко Александра Ивановна", 4, 54200);
-        employees[7] = new Employee("Горбунова Алена Дмитриевна", 5, 59200);
-        employees[8] = new Employee("Яркова Екатерина Дмитриевна", 2, 59100);
-        employees[9] = new Employee("Шомысова Наталья Ивановна", 5, 56200);*/
+        PersonelManagement  staff = new PersonelManagement();
+        staff.addEmployee("Филимонова Ольга Павловна", 1, 58500);
+        staff.addEmployee("Вильгельмс Валерий Борисович", 2, 52000);
+        staff.addEmployee("Фаткулин Ринат Исламович", 4, 57300);
+        staff.addEmployee("Акимочкина Яна Юрьевна", 3, 53100);
+        staff.addEmployee("Петросян Дмитрий Владимироваич", 3, 52500);
+        staff.addEmployee("Торопина Ольга Владимировна", 2, 55200);
+        staff.addEmployee("Гастренко Александра Ивановна", 4, 54200);
+        staff.addEmployee("Горбунова Алена Дмитриевна", 5, 59200);
+        staff.addEmployee("Яркова Екатерина Дмитриевна", 2, 59100);
+        staff.addEmployee("Шомысова Наталья Ивановна", 5, 56200);
 
-// Печать всех сотрудников
-
+       staff.printAllEmployees();
 
 
 //        for (Employee strings : employees) {
@@ -64,8 +63,6 @@ public class Main {
         }
 */
     }
-
-
 
 
 }

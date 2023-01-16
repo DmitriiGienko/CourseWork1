@@ -6,7 +6,7 @@ public class Employee {
     public static int count = 0;
 
 
-    public Employee(String fullName, int dep, int salary) {
+    public Employee(String fullName, int dep, double salary) {
         this.fullName = fullName;
         this.dep = dep;
         this.salary = salary;
@@ -43,12 +43,12 @@ public class Employee {
         this.dep = dep;
     }
 
-   /* @Override
+    @Override
     public String toString() {
         return "Сотрудник: " + fullName + "\n" +
-                "..........отдел: " + dep + "\n" +
-                "..........зарплата: " + salary + "\n" +
-                "..........Id: " + getId()+ "\n" + "=========================================";
-    }*/
+                "\tотдел: " + dep + "\n" +
+                "\tзарплата:  " + salary + "\n" +
+                "\tId: " + getId()+ "\n" + "=========================================";
+    }
 
 }
