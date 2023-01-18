@@ -47,8 +47,15 @@ public class Employee {
     public String toString() {
         return "Сотрудник: " + fullName + "\n" +
                 "\tотдел: " + dep + "\n" +
-                "\tзарплата:  " + salary + "\n" +
+                "\tзарплата: "+  salary + "\n" +
                 "\tId: " + getId() + "\n" + "=========================================";
     }
+
+    public String toStringDep() {
+        return "Сотрудник: " + fullName + "\n" +
+                "\tзарплата: " + salary + "\n" +
+                "\tId: " + getId() + "\n" + "=========================================";
+    }
+
 
 }
