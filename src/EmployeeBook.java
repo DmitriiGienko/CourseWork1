@@ -164,14 +164,12 @@ public class EmployeeBook {
     public void increaseDepSalary() {
         int dep = getDepartmentNumber();
         System.out.println("На сколько повышаем зарплату?");
-        Scanner sc = new Scanner(System.in);
-        int inc = sc.nextInt();
-        double newSaalary = 0;
+        double inc = scanner.nextInt();
         for (int i = 0; i < employee.length; i++) {
             if (employee[i].getDep() == dep) {
-                newSaalary = employee[i].getSalary() + (employee[i].getSalary() * (inc / 100));
+                employee[i].setSalary(employee[i].getSalary() + (employee[i].getSalary() * (inc / 100)));
                 System.out.println("После повышения на " + inc + "% зарплата сотрудника "
-                        + employee[i].getFullName() + " составляет " + newSaalary);
+                        + employee[i].getFullName() + " составляет " + employee[i].getSalary());
             }
         }
     }
@@ -250,8 +248,32 @@ public class EmployeeBook {
                 System.out.printf("%s тепеть получает %.2f руб\n", employee[i].getFullName(), employee[i].getSalary());
             }
         }
-
     }
 
+    //метод перевода сотрудника в другой отдел
+    public void changeDepartment(String fullName) {
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getFullName().equals(fullName)) {
+                System.out.println("В какой отдел перевести сотрудника:" + employee[i].getFullName());
+                int inc = scanner.nextInt();
+                employee[i].setDep(inc);
+                System.out.printf("%s переведен(a) в отдел %d руб\n", employee[i].getFullName(), employee[i].getId());
+            }
+        }
+    }
+
+    //метод выводы ФИО по отделам
+    public void printInfoByDepartment() {
+        int dep = 1;
+        while (dep <= 5) {
+            System.out.printf("Сотрудники отдела № %d:\n", dep);
+            for (int i = 0; i < employee.length; i++) {
+                if (employee[i].getDep() == dep) {
+                    System.out.println(employee[i].getFullName());
+                }
+            }
+            dep++;
+        }
+    }
 
 }

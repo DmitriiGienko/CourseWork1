@@ -1,6 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         EmployeeBook staff = new EmployeeBook();
+
+        //метод добавления сотрудников
         staff.addEmployee("Филимонова Ольга Павловна", 1, 58500);
         staff.addEmployee("Вильгельмс Валерий Борисович", 2, 52000);
         staff.addEmployee("Фаткулин Ринат Исламович", 4, 57300);
@@ -13,55 +15,65 @@ public class Main {
         staff.addEmployee("Шомысова Наталья Ивановна", 5, 56200);
 
 
-//        staff.printAllEmployees();
-//        System.out.println();
-//
-//        System.out.println();
-        staff.printAllEmployees();
-//        staff.printAllEmployees();
-
+        // метод вывода всех сотрудников на экран
         staff.printAllEmployees();
 
-
-
-        /*staff.printAllEmployees();
-
+        // сумма затрат на зарплату
         staff.printTotalPay();
 
+        //сотрудник с минимальной зарплатой
         staff.printEmpMinSal();
 
+        //сотрудник с максимальной зарплатой
         staff.printEmpMaxSal();
 
+        //расчет средней зарплаты
         staff.printAverageSalary();
 
+        //вывод ФИО сотрудников
         staff.printFullNames();
 
+        //увеличиваем зарплату
         staff.increaseSalary();
 
+        // вывод минимальной зарплаты в отделе
         staff.findMinSalaryDepEmployee();
 
+        // вывод максимальной зарплаты в отделе
         staff.findMaxSalaryDepEmployee();
 
+        // вывод расхода на зарплаты в отделе
         staff.printDepTotalSalary();
 
+        // вывод средней зарплаты в отделе
         staff.printAverageDepSalary();
 
+        // увеличиваем зарплату отдела
         staff.increaseDepSalary();
 
+        // выводим на печать сотрудников отдела
         staff.printDepEmployee();
 
+        //Вывод сотрудников с зарплатой меньше заданного числа
         staff.printSalaryLessThen();
 
-        staff.printSalaryMoreThen();*/
+        //Вывод сотрудников с зарплатой больше заданного числа
+        staff.printSalaryMoreThen();
 
-//        staff.deleteEmployeeByName("Фаткулин Ринат Исламович");
-//
-//        staff.addEmployee("Сидоров Петр Иванович", 2, 36000);
+        //    метод удаления сотрудника по имени
+        staff.deleteEmployeeByName("Фаткулин Ринат Исламович");
 
-//        staff.deleteEmployeeById(2);
+        //    метод удаления сотрудника по id
+        staff.deleteEmployeeById(2);
 
-//        staff.changeSalary("Шомысова Наталья Ивановна");
+        //метод изменения зарплаты сотрудника сотрудника
+        staff.changeSalary("Шомысова Наталья Ивановна");
 
+        //метод перевода сотрудника в другой отдел
+        staff.changeDepartment("Шомысова Наталья Ивановна");
+
+        //метод выводы ФИО по отделам
+        staff.printInfoByDepartment();
 
     }
 
