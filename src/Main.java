@@ -15,6 +15,7 @@ public class Main {
         staff.addEmployee("Шомысова Наталья Ивановна", 5, 56200);
 
 
+
         // метод вывода всех сотрудников на экран
         staff.printAllEmployees();
 
